@@ -21,8 +21,8 @@ var createScene = function () {
     camera.setPosition(new BABYLON.Vector3(10, 10, -10));
     camera.attachControl(canvas, true);
 
-    var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
-    light.intensity = 0.7;
+    // var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
+    // light.intensity = 0.7;
 
     var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
     spot.diffuse = new BABYLON.Color3(1, 1, 1);
