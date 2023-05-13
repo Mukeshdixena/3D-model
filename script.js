@@ -21,8 +21,8 @@ var createScene = function () {
     camera.setPosition(new BABYLON.Vector3(30, 10, -30));
     camera.attachControl(canvas, true);
 
-    // var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 0.5, 0), scene);
-    // light.intensity = 0.7;
+    var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
+    light.intensity = 0.7;
 
     var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
     spot.diffuse = new BABYLON.Color3(1, 1, 1);
@@ -75,6 +75,7 @@ var createScene = function () {
     // tree
     var tree = simplePineGenerator(5, 20, woodMaterial, leafMaterial);
     tree.position.x = -20;
+    tree.position.y =  2;
 
     // ground
     const ground = Ground();
@@ -97,6 +98,7 @@ const Ground = () => {
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 1000, height: 1000 });
     ground.material = groundMat;
+    ground.position.y = -0.15;
 }
 
 var house = function () {
@@ -125,7 +127,8 @@ const buildBox = () => {
 
     const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
     box.material = boxMat;
-    box.position.y = 0.5;
+    box.position.y = 0.35;
+    box.position.x = 3;
 
     return box;
 }
@@ -139,7 +142,8 @@ const buildRoof = () => {
     roof.material = roofMat;
     roof.scaling.x = 0.75;
     roof.rotation.z = Math.PI / 2;
-    roof.position.y = 1.22;
+    roof.position.y = 1.1;
+    roof.position.x = 3;
 
     return roof;
 }
