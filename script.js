@@ -76,11 +76,22 @@ var createScene = function () {
     var tree = simplePineGenerator(5, 20, woodMaterial, leafMaterial);
     tree.position.x = -20; 
 
+    // ground
+    const ground = Ground();
+
 
     return scene;
 };
 
 
+const Ground = () => {
+    //color
+    const groundMat = new BABYLON.StandardMaterial("groundMat");
+    groundMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
+
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 1000, height: 1000 });
+    ground.material = groundMat;
+}
 
 
 
