@@ -74,10 +74,17 @@ var createScene = function () {
 
     // tree
     var tree = simplePineGenerator(5, 20, woodMaterial, leafMaterial);
+    tree.position.x = -20; 
 
 
     return scene;
 };
+
+
+
+
+
+
 
 
 window.initFunction = async function () {
