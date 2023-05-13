@@ -74,10 +74,15 @@ var createScene = function () {
 
     // tree
     var tree = simplePineGenerator(5, 20, woodMaterial, leafMaterial);
-    tree.position.x = -20; 
+    tree.position.x = -20;
 
     // ground
     const ground = Ground();
+
+    // building
+    var building = house();
+
+
 
 
     return scene;
@@ -93,6 +98,50 @@ const Ground = () => {
     ground.material = groundMat;
 }
 
+var house = function () {
+
+
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+
+    const box = buildBox();
+    const roof = buildRoof();
+
+    const house = BABYLON.Mesh.MergeMeshes([box, roof], true, false, null, false, true);
+}
+const buildBox = () => {
+    //texture
+    const boxMat = new BABYLON.StandardMaterial("roofMat");
+    boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png")
+
+
+    const faceUV = [];
+    faceUV[0] = new BABYLON.Vector4(0.5, 0.0, 0.75, 1.0); //rear face
+    faceUV[1] = new BABYLON.Vector4(0.0, 0.0, 0.25, 1.0); //front face
+    faceUV[2] = new BABYLON.Vector4(0.25, 0, 0.5, 1.0); //right side
+    faceUV[3] = new BABYLON.Vector4(0.75, 0, 1.0, 1.0); //left side
+
+
+
+    const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
+    box.material = boxMat;
+    box.position.y = 0.5;
+
+    return box;
+}
+
+const buildRoof = () => {
+    //texture
+    const roofMat = new BABYLON.StandardMaterial("roofMat");
+    roofMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/roof.jpg");
+
+    const roof = BABYLON.MeshBuilder.CreateCylinder("roof", { diameter: 1.3, height: 1.2, tessellation: 3 });
+    roof.material = roofMat;
+    roof.scaling.x = 0.75;
+    roof.rotation.z = Math.PI / 2;
+    roof.position.y = 1.22;
+
+    return roof;
+}
 
 
 
