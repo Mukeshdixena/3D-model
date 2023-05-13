@@ -21,8 +21,8 @@ var createScene = function () {
     camera.setPosition(new BABYLON.Vector3(30, 10, -30));
     camera.attachControl(canvas, true);
 
-    var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 0.5, 0), scene);
-    light.intensity = 0.7;
+    // var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 0.5, 0), scene);
+    // light.intensity = 0.7;
 
     var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
     spot.diffuse = new BABYLON.Color3(1, 1, 1);
@@ -82,8 +82,9 @@ var createScene = function () {
     // building
     var building = house();
 
-
-
+    // vehical
+    var car = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "car.babylon");
+    // car.position.x = 20;
 
     return scene;
 };
