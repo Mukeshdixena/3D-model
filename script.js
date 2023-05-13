@@ -18,7 +18,7 @@ var createScene = function () {
 
     // camera
     var camera = new BABYLON.ArcRotateCamera("camera1", 0, 0, 0, new BABYLON.Vector3(0, 0, -0), scene);
-    camera.setPosition(new BABYLON.Vector3(30, 10, -30));
+    camera.setPosition(new BABYLON.Vector3(10, 10, -10));
     camera.attachControl(canvas, true);
 
     var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
@@ -56,11 +56,11 @@ var createScene = function () {
             var fact = 1;
             if (i % 2 == 0) { fact = .5; }
             var radius = (nbL * 2 - i - 1) * fact;
-            return radius;
+            return radius/4;
         };
 
         var leaves = BABYLON.Mesh.CreateTube("tube", curve, 0, 5, radiusFunction, 1, scene);
-        var trunk = BABYLON.Mesh.CreateCylinder("trunk", nbS / nbL, nbL * 1.5 - nbL / 2 - 1, nbL * 1.5 - nbL / 2 - 1, 12, 1, scene);
+        var trunk = BABYLON.Mesh.CreateCylinder("trunk", (nbS / nbL) + 2, (nbL * 1.5 - nbL / 2 - 1)-4, (nbL * 1.5 - nbL / 2 - 1)-4, 12, 1, scene);
 
         leaves.material = leafMaterial;
         trunk.material = woodMaterial;
@@ -73,9 +73,9 @@ var createScene = function () {
 
 
     // tree
-    var tree = simplePineGenerator(5, 20, woodMaterial, leafMaterial);
-    tree.position.x = -20;
-    tree.position.y =  2;
+    var tree = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree.position.x = -4;
+    tree.position.y =  1;
 
     // ground
     const ground = Ground();
