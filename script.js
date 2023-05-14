@@ -81,7 +81,18 @@ var createScene = function () {
     const ground = Ground();
 
     // building
-    var building = house();
+    var building = house(2,0); // x,z
+    var building = house(2,3); // x,z
+    var building = house(2,6); // x,z
+    var building = house(2,-3); // x,z
+    var building = house(0, 6); // x,z
+    var building = house(-2, 6); // x,z
+    var building = house(-4, 6); // x,z
+    var building = house(-6, 6); // x,z
+    var building = house(0, 3); // x,z
+    var building = house(-2, 3); // x,z
+    var building = house(-4, 3); // x,z
+    var building = house(-6, 3); // x,z
 
     // vehical
     var car = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "car.babylon");
@@ -101,17 +112,17 @@ const Ground = () => {
     ground.position.y = -0.15;
 }
 
-var house = function () {
+var house = function (X, Z) {
 
 
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    const box = buildBox();
-    const roof = buildRoof();
+    const box = buildBox(X, Z);
+    const roof = buildRoof(X, Z);
 
     const house = BABYLON.Mesh.MergeMeshes([box, roof], true, false, null, false, true);
 }
-const buildBox = () => {
+const buildBox = (X, Z) => {
     //texture
     const boxMat = new BABYLON.StandardMaterial("roofMat");
     boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png")
@@ -128,12 +139,13 @@ const buildBox = () => {
     const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
     box.material = boxMat;
     box.position.y = 0.35;
-    box.position.x = 3;
+    box.position.x = X;
+    box.position.z = Z;
 
     return box;
 }
 
-const buildRoof = () => {
+const buildRoof = (X, Z) => {
     //texture
     const roofMat = new BABYLON.StandardMaterial("roofMat");
     roofMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/roof.jpg");
@@ -143,7 +155,8 @@ const buildRoof = () => {
     roof.scaling.x = 0.75;
     roof.rotation.z = Math.PI / 2;
     roof.position.y = 1.1;
-    roof.position.x = 3;
+    roof.position.x = X;
+    roof.position.z = Z;
 
     return roof;
 }
