@@ -24,10 +24,10 @@ var createScene = function () {
     // var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
     // light.intensity = 0.7;
 
-    var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
-    spot.diffuse = new BABYLON.Color3(1, 1, 1);
-    spot.specular = new BABYLON.Color3(0, 0, 0);
-    spot.intensity = 0.8;
+    // var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
+    // spot.diffuse = new BABYLON.Color3(1, 1, 1);
+    // spot.specular = new BABYLON.Color3(1, 1, 1);
+    // spot.intensity = 0.8;
 
     var leafMaterial = new BABYLON.StandardMaterial("leafMaterial", scene);
     leafMaterial.diffuseColor = new BABYLON.Color3(0.5, 1, 0.5);
@@ -56,11 +56,11 @@ var createScene = function () {
             var fact = 1;
             if (i % 2 == 0) { fact = .5; }
             var radius = (nbL * 2 - i - 1) * fact;
-            return radius/4;
+            return radius / 4;
         };
 
         var leaves = BABYLON.Mesh.CreateTube("tube", curve, 0, 5, radiusFunction, 1, scene);
-        var trunk = BABYLON.Mesh.CreateCylinder("trunk", (nbS / nbL) + 2, (nbL * 1.5 - nbL / 2 - 1)-4, (nbL * 1.5 - nbL / 2 - 1)-4, 12, 1, scene);
+        var trunk = BABYLON.Mesh.CreateCylinder("trunk", (nbS / nbL) + 2, (nbL * 1.5 - nbL / 2 - 1) - 4, (nbL * 1.5 - nbL / 2 - 1) - 4, 12, 1, scene);
 
         leaves.material = leafMaterial;
         trunk.material = woodMaterial;
@@ -74,25 +74,290 @@ var createScene = function () {
 
     // tree
     var tree = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
-    tree.position.x = -4;
-    tree.position.y =  1;
+    tree.position.y = 1;
+    tree.position.x = 0;
+    tree.position.z = 11;
+    var tree2 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree2.position.y = 1;
+    tree2.position.x = 5;
+    tree2.position.z = 11;
+    var tree3 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree3.position.y = 1;
+    tree3.position.x = 10;
+    tree3.position.z = 11;
+    var tree4 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree4.position.y = 1;
+    tree4.position.x = 15;
+    tree4.position.z = 11;
+    var tree5 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree5.position.y = 1;
+    tree5.position.x = 20;
+    tree5.position.z = 11;
+    var tree_2 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_2.position.y = 1;
+    tree_2.position.x = -5;
+    tree_2.position.z = 11;
+    var tree_3 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_3.position.y = 1;
+    tree_3.position.x = -10;
+    tree_3.position.z = 11;
+    var tree_4 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_4.position.y = 1;
+    tree_4.position.x = -15;
+    tree_4.position.z = 11;
+    var tree_5 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_5.position.y = 1;
+    tree_5.position.x = -20;
+    tree_5.position.z = 11;
+    
+    var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree1.position.y = 1;
+    tree1.position.x = 0;
+    tree1.position.z = 20;
+    var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree12.position.y = 1;
+    tree12.position.x = 5;
+    tree12.position.z = 20;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = 20;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = 20;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = 20;
+    var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_12.position.y = 1;
+    tree_12.position.x = -5;
+    tree_12.position.z = 20;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = 20;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = 20;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = 20;
+    
+    var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree1.position.y = 1;
+    tree1.position.x = 0;
+    tree1.position.z = 5;
+    var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree12.position.y = 1;
+    tree12.position.x = 5;
+    tree12.position.z = 5;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = 5;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = 5;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = 5;
+    var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_12.position.y = 1;
+    tree_12.position.x = -5;
+    tree_12.position.z = 5;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = 5;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = 5;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = 5;
 
+
+    // var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    // tree1.position.y = 1;
+    // tree1.position.x = 0;
+    // tree1.position.z = 0;
+    // var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    // tree12.position.y = 1;
+    // tree12.position.x = 5;
+    // tree12.position.z = 0;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = 0;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = 0;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = 0;
+    var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_12.position.y = 1;
+    tree_12.position.x = -5;
+    tree_12.position.z = 0;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = 0;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = 0;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = 0;
+    
+    // var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    // tree1.position.y = 1;
+    // tree1.position.x = 0;
+    // tree1.position.z = -5;
+    // var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    // tree12.position.y = 1;
+    // tree12.position.x = 5;
+    // tree12.position.z = -5;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = -5;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = -5;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = -5;
+    // var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    // tree_12.position.y = 1;
+    // tree_12.position.x = -5;
+    // tree_12.position.z = -5;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = -5;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = -5;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = -5;
+    
+    var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree1.position.y = 1;
+    tree1.position.x = 0;
+    tree1.position.z = -10;
+    var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree12.position.y = 1;
+    tree12.position.x = 5;
+    tree12.position.z = -10;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = -10;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = -10;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = -10;
+    var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_12.position.y = 1;
+    tree_12.position.x = -5;
+    tree_12.position.z = -10;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = -10;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = -10;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = -10;
+    
+    var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree1.position.y = 1;
+    tree1.position.x = 0;
+    tree1.position.z = -15;
+    var tree12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree12.position.y = 1;
+    tree12.position.x = 5;
+    tree12.position.z = -15;
+    var tree13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree13.position.y = 1;
+    tree13.position.x = 10;
+    tree13.position.z = -15;
+    var tree14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree14.position.y = 1;
+    tree14.position.x = 15;
+    tree14.position.z = -15;
+    var tree15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree15.position.y = 1;
+    tree15.position.x = 20;
+    tree15.position.z = -15;
+    var tree_12 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_12.position.y = 1;
+    tree_12.position.x = -5;
+    tree_12.position.z = -15;
+    var tree_13 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_13.position.y = 1;
+    tree_13.position.x = -10;
+    tree_13.position.z = -15;
+    var tree_14 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_14.position.y = 1;
+    tree_14.position.x = -15;
+    tree_14.position.z = -15;
+    var tree_15 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
+    tree_15.position.y = 1;
+    tree_15.position.x = -20;
+    tree_15.position.z = -15;
+
+
+
+
+
+
+
+    
     // ground
     const ground = Ground();
 
     // building
-    var building = house(2,0); // x,z
-    var building = house(2,3); // x,z
-    var building = house(2,6); // x,z
-    var building = house(2,-3); // x,z
-    var building = house(0, 6); // x,z
-    var building = house(-2, 6); // x,z
-    var building = house(-4, 6); // x,z
-    var building = house(-6, 6); // x,z
-    var building = house(0, 3); // x,z
-    var building = house(-2, 3); // x,z
-    var building = house(-4, 3); // x,z
-    var building = house(-6, 3); // x,z
+    var building = house(-2, -1); // x,z
+    var building = house(1, 1.2); // x,z
+    var building = house(-1, 1.2); // x,z
+    var building = house(0, 1.2); // x,z
+    var building = house(2, -2); // x,z
+    var building = house(2.3, -0.2); // x,z
+    var building = house(-4, -5); // x,z 
+    var building = house(-5, -5); // x,z 
+    var building = house(5.5, -0.5); // x,z
+    var building = house(4.5, -0.5); // x,z
+    var building = house(6, -5); // x,z
+    // var building = house(-2, 3); // x,z
+    // var building = house(-4, 3); // x,z
+    // var building = house(-6, 3); // x,z
 
     // vehical
     var car = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "car.babylon");
@@ -102,12 +367,14 @@ var createScene = function () {
 };
 
 
+
+
 const Ground = () => {
     //color
     const groundMat = new BABYLON.StandardMaterial("groundMat");
     groundMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 1000, height: 1000 });
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 100, height: 100 });
     ground.material = groundMat;
     ground.position.y = -0.15;
 }
