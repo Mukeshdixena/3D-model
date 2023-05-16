@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -15,4 +16,9 @@ html, body {
 #canvasZone {
     width: 100%;
     height: 100%;
+}
+
+.cantainer{
+    display: flex;
+    gap: 200px;
 }

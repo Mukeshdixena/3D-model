@@ -16,6 +16,7 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color3(0.29, 0.26, 0.26);
 
+
     // camera
 
 
@@ -56,15 +57,18 @@ var createScene = function () {
 
     // universeCamera
 
-    
-    // // Parameters : name, position, scene
-    // const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
+
+    // Parameters : name, position, scene
+    // const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-4, 1, -10), scene);
 
     // // Targets the camera to a particular position. In this case the scene origin
     // camera.setTarget(BABYLON.Vector3.Zero());
 
     // // Attach the camera to the canvas
     // camera.attachControl(canvas, true);
+
+    // camera.speed = 0.5;
+    // camera.angularSensibility = 500;
 
     // // scene.activeCamera = camera;
     // document.addEventListener("keydown", function (event) {
@@ -475,7 +479,7 @@ var createScene = function () {
 
 
 
-    // ground
+    // // ground
     const ground = Ground();
 
     // building
@@ -498,6 +502,56 @@ var createScene = function () {
     var car = BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "car.babylon");
     // car.position.x = 20;
 
+    // var rabbit = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "Rabbit.babylon", scene, function (meshes) {
+    // scene.createDefaultCameraOrLight(true, true, true);
+    // scene.createDefaultEnvironment();
+    // mesh.position = new Vector3(2, 3, 4);
+
+    // });
+
+    // var scale = rabbit.scale;
+    // scale.x = 100;
+    // scale.y = 100;
+    // model.updateBounds();
+
+    // rabbit.transform = new BABYLON.Matrix.Scaling(0.02, 0.02, 0.02);
+
+
+    // const loader = new BABYLON.SceneLoader(scene);
+
+    // const model = await loader.ImportMeshAsync("Rabbit.babylon");
+
+    // scene.addMesh(model);
+
+
+    // BABYLON.SceneLoader.ImportMesh("", "scenes/", "buggy2.1.babylon", scene, function (newMeshes) {
+    //     var buggy2 = newMeshes[0];
+    //     camera.target = buggy2;
+
+    //     var decalMaterial = new BABYLON.StandardMaterial("decalMat", scene);
+    //     var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 300, height: 15 }, scene);
+    //     ground.material = decalMaterial;
+    // });
+
+    // // Create a new Babylon.js scene.
+    // var scene = new BABYLON.Scene();
+
+    // // Create a new ground plane mesh.
+    // var groundPlane = BABYLON.MeshBuilder.CreateGround('groundPlane', { width: 100, height: 100 });
+
+    // // Create a new material for the ground plane.
+    // var material = new BABYLON.StandardMaterial("material", scene);
+
+    // // Set the texture for the material.
+    // material.diffuseTexture = new BABYLON.Texture("grass.png", scene);
+
+    // // Set the material on the ground plane mesh.
+    // groundPlane.material = material;
+
+    // // Add the ground plane mesh to the scene.
+    // scene.add(groundPlane);
+
+
     return scene;
 };
 
@@ -506,12 +560,23 @@ var createScene = function () {
 
 const Ground = () => {
     //color
-    const groundMat = new BABYLON.StandardMaterial("groundMat");
-    groundMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
+    // const groundMat = new BABYLON.StandardMaterial("groundMat");
+    // groundMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 100, height: 100 });
-    ground.material = groundMat;
+
+
+    // const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 100, height: 100 });
+    // ground.material = groundMat;
+    // ground.position.y = -0.15;
+    
+    
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 50, height: 50 }, scene);
+    var material = new BABYLON.StandardMaterial("groundMaterial", scene);
+    material.diffuseTexture = new BABYLON.Texture("ground2.jpg", scene);
+    ground.material = material;
     ground.position.y = -0.15;
+
+
 }
 
 var house = function (X, Z) {
