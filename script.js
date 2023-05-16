@@ -30,9 +30,9 @@ var createScene = function () {
     camera.attachControl(canvas, true);
 
     camera.keysUp.push(87);
-    camera.keysDown.push(83); 
-    camera.keysLeft.push(65); 
-    camera.keysRight.push(68); 
+    camera.keysDown.push(83);
+    camera.keysLeft.push(65);
+    camera.keysRight.push(68);
     camera.zoomSpeed = 0.5;
 
 
@@ -417,7 +417,7 @@ var createScene = function () {
     var building = house(-2, -1);
     var building = house(1, 1.2);
     var building = house(-1, 1.2);
-    var building = house( 0 , 1.2);
+    var building = house(0, 1.2);
     var building = house(2, -2);
     var building = house(2.3, -0.2);
     var building = house(-4, -5);
@@ -428,25 +428,25 @@ var createScene = function () {
     var building = house(-4, 3);
     var building = house(-6, 3);
 
-    var car = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "car.babylon", scene, function(meshes){
+    var car = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "car.babylon", scene, function (meshes) {
 
         var rootMesh = meshes[0];
-        var scale = new BABYLON.Vector3(2,2,2);
+        var scale = new BABYLON.Vector3(2, 2, 2);
         rootMesh.scaling = scale;
         var position = new BABYLON.Vector3(0, 0.2, -1);
         rootMesh.position = position;
     });
-    
-    var rabbit = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "rabbit.babylon", scene, function(meshes){
+
+    var rabbit = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "rabbit.babylon", scene, function (meshes) {
 
         var rootMesh = meshes[0];
-        var scale = new BABYLON.Vector3(0.02,0.02,0.02);
+        var scale = new BABYLON.Vector3(0.02, 0.02, 0.02);
         rootMesh.scaling = scale;
         var position = new BABYLON.Vector3(4, -0.15, -3);
         rootMesh.position = position;
     });
-    
-    var dummy = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "dummy3.babylon", scene, function(meshes){
+
+    var dummy = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "dummy3.babylon", scene, function (meshes) {
 
         var rootMesh = meshes[0];
 
@@ -485,7 +485,7 @@ const buildBox = (X, Z) => {
     faceUV[3] = new BABYLON.Vector4(0.25, 0, 0.5, 1);
     faceUV[4] = new BABYLON.Vector4(0.75, 0.0, 1.0, 1.0);
 
-    const box = BABYLON.MeshBuilder.CreateBox("box", {faceUV:faceUV, wrap: true});
+    const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
     box.material = boxMat;
     box.position.y = 0.35;
     box.position.x = X;
@@ -499,10 +499,10 @@ const buildRoof = (X, Z) => {
     const roofMat = new BABYLON.StandardMaterial("roofMat");
     roofMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/roof.jpg");
 
-    const roof = BABYLON.MeshBuilder.CreateCylinder("roof", {diameter:1.3, height:1.2, tessellation:3});
+    const roof = BABYLON.MeshBuilder.CreateCylinder("roof", { diameter: 1.3, height: 1.2, tessellation: 3 });
     roof.material = roofMat;
     roof.scaling.x = 0.75;
-    roof.rotation.z = Math.PI/2;
+    roof.rotation.z = Math.PI / 2;
     roof.position.y = 1.1;
     roof.position.x = X;
     roof.position.z = Z;
