@@ -17,13 +17,76 @@ var createScene = function () {
     scene.clearColor = new BABYLON.Color3(0.29, 0.26, 0.26);
 
     // camera
+
+
+    // ArcRotateCamera
+
     var camera = new BABYLON.ArcRotateCamera("camera1", 0, 0, 0, new BABYLON.Vector3(0, 0, -0), scene);
     camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
-    // camera.setPosition(new BABYLON.Vector3(10, 100, 100));
     camera.attachControl(canvas, true);
+    // camera.attachControl(canvas, true);
 
-    // var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 0, 0), scene);
-    // light.intensity = 0.7;
+    camera.keysUp.push(87); //w
+    camera.keysDown.push(83) //s
+    camera.keysLeft.push(65); //a
+    camera.keysRight.push(68); //d
+
+
+    // FreeCamera
+
+    // var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 5, -10), scene);
+    // camera.position = new BABYLON.Vector3(0, 5, -10);
+    // camera.setTarget(BABYLON.Vector3.Zero());
+    // camera.speed = 0.2;
+    // camera.angularSensibility = 500;
+    // camera.attachControl(canvas, true);
+    // // scene.activeCamera = camera;
+
+
+    // FollowCamera
+
+    // var camera = new BABYLON.FollowCamera("camera", new BABYLON.Vector3(0, 0, 0), scene);
+    // // camera.lockedTarget = mesh;
+    // // camera.radius = 20; // distance from the target
+    // // camera.lockedTarget = mesh;
+    // // camera.radius = 20; // distance from the target
+    // // scene.activeCamera = camera;
+    // camera.attachControl(canvas, true);
+
+
+    // universeCamera
+
+    
+    // // Parameters : name, position, scene
+    // const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
+
+    // // Targets the camera to a particular position. In this case the scene origin
+    // camera.setTarget(BABYLON.Vector3.Zero());
+
+    // // Attach the camera to the canvas
+    // camera.attachControl(canvas, true);
+
+    // // scene.activeCamera = camera;
+    // document.addEventListener("keydown", function (event) {
+    //     switch (event.keyCode) {
+    //         case 87: // W key
+    //             camera.position.z += camera.speed;
+    //             break;
+    //         case 83: // S key
+    //             camera.position.z -= camera.speed;
+    //             break;
+    //         case 65: // A key
+    //             camera.position.x -= camera.speed;
+    //             break;
+    //         case 68: // D key
+    //             camera.position.x += camera.speed;
+    //             break;
+    //     }
+    // });
+
+
+    // var light = new BABYLON.DirectionalLight("light", new BABYLON.Vector3(0, 0, 0), scene);
+    // light.intensity = 0.5;
 
     // var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
     // spot.diffuse = new BABYLON.Color3(1, 1, 1);
@@ -110,7 +173,7 @@ var createScene = function () {
     tree_5.position.y = 1;
     tree_5.position.x = -20;
     tree_5.position.z = 11;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -147,7 +210,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = 20;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -222,7 +285,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = 0;
-    
+
     // var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     // tree1.position.y = 1;
     // tree1.position.x = 0;
@@ -259,7 +322,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = -5;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -296,7 +359,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = -10;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -333,7 +396,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = -15;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -370,7 +433,7 @@ var createScene = function () {
     tree_15.position.y = 1;
     tree_15.position.x = -20;
     tree_15.position.z = 15.5;
-    
+
     var tree1 = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree1.position.y = 1;
     tree1.position.x = 0;
@@ -411,7 +474,7 @@ var createScene = function () {
 
 
 
-    
+
     // ground
     const ground = Ground();
 
