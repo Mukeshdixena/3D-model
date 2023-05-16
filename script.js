@@ -18,19 +18,17 @@ var createScene = function () {
 
 
     // camera
-
-
+    
     // ArcRotateCamera
 
-    var camera = new BABYLON.ArcRotateCamera("camera1", 0, 0, 0, new BABYLON.Vector3(0, 0, -0), scene);
-    camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
-    camera.attachControl(canvas, true);
+    // var camera = new BABYLON.ArcRotateCamera("camera1", -4, 1, -10, new BABYLON.Vector3(0, 0, -0), scene);
+    // // camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
     // camera.attachControl(canvas, true);
 
-    camera.keysUp.push(87); //w
-    camera.keysDown.push(83) //s
-    camera.keysLeft.push(65); //a
-    camera.keysRight.push(68); //d
+    // camera.keysUp.push(87); //w
+    // camera.keysDown.push(83) //s
+    // camera.keysLeft.push(65); //a
+    // camera.keysRight.push(68); //d
 
 
     // FreeCamera
@@ -58,41 +56,24 @@ var createScene = function () {
     // universeCamera
 
 
-    // const camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(-4, 1, -10), scene);
 
-    // camera.setTarget(BABYLON.Vector3.Zero());
+    var camera = new BABYLON.UniversalCamera("camera", new BABYLON.Vector3(0, 1, -10), scene);
+    camera.attachControl(canvas, true);
 
-    // camera.attachControl(canvas, true);
+    camera.keysUp.push(87); 
+    camera.keysDown.push(83); 
+    camera.keysLeft.push(65); 
+    camera.keysRight.push(68); 
 
-    // camera.speed = 0.5;
-    // camera.angularSensibility = 500;
-
-    // // scene.activeCamera = camera;
-    // document.addEventListener("keydown", function (event) {
-    //     switch (event.keyCode) {
-    //         case 87: // W key
-    //             camera.position.z += camera.speed;
-    //             break;
-    //         case 83: // S key
-    //             camera.position.z -= camera.speed;
-    //             break;
-    //         case 65: // A key
-    //             camera.position.x -= camera.speed;
-    //             break;
-    //         case 68: // D key
-    //             camera.position.x += camera.speed;
-    //             break;
-    //     }
-    // });
-
+    camera.zoomSpeed = 0.5; 
 
     // var light = new BABYLON.DirectionalLight("light", new BABYLON.Vector3(0, 0, 0), scene);
     // light.intensity = 0.5;
 
-    // var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
-    // spot.diffuse = new BABYLON.Color3(1, 1, 1);
-    // spot.specular = new BABYLON.Color3(1, 1, 1);
-    // spot.intensity = 0.8;
+    var spot = new BABYLON.SpotLight("spot", new BABYLON.Vector3(25, 15, -10), new BABYLON.Vector3(-1, -0.8, 1), 15, 1, scene);
+    spot.diffuse = new BABYLON.Color3(1, 1, 1);
+    spot.specular = new BABYLON.Color3(1, 1, 1);
+    spot.intensity = 0.8;
 
     var leafMaterial = new BABYLON.StandardMaterial("leafMaterial", scene);
     leafMaterial.diffuseColor = new BABYLON.Color3(0.5, 1, 0.5);
