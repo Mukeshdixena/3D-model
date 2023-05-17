@@ -437,7 +437,7 @@ var createScene = function () {
         rootMesh.position = position;
     });
 
-    var rabbit = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "rabbit.babylon", scene, function (meshes) {
+    var rabbit = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "Rabbit.babylon", scene, function (meshes) {
 
         var rootMesh = meshes[0];
         var scale = new BABYLON.Vector3(0.02, 0.02, 0.02);
