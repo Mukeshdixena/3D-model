@@ -190,7 +190,6 @@ var createScene = function () {
     tree.position.x = -20;
     tree.position.z = 5;
 
-
     var tree = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree.position.y = 1;
     tree.position.x = 10;
@@ -369,11 +368,6 @@ var createScene = function () {
     tree.position.y = 1;
     tree.position.x = -20;
     tree.position.z = 15.5;
-
-
-
-
-
 
     var tree = simplePineGenerator(5, 10, woodMaterial, leafMaterial);
     tree.position.y = 1;
