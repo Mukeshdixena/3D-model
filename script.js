@@ -17,7 +17,7 @@ var createScene = function () {
     scene.clearColor = new BABYLON.Color3(0.29, 0.26, 0.26);
 
     var camera = new BABYLON.ArcRotateCamera("camera1", -4, 1, -10, new BABYLON.Vector3(0, 0, 0), scene);
-    camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
+    camera.setPosition(new BABYLON.Vector3(5, 20, -15));
     camera.attachControl(canvas, true);
 
     camera.keysUp.push(87); //w
