@@ -16,24 +16,24 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color3(0.29, 0.26, 0.26);
 
-    // var camera = new BABYLON.ArcRotateCamera("camera1", -4, 1, -10, new BABYLON.Vector3(0, 0, 0), scene);
-    // camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
-    // CanvasCaptureMediaStreamTrack.attachControl(canvas, true);
-
-    // camera.keysUp.push(87); //w
-    // camera.keysDown.push(83); //s
-    // camera.keysLeft.push(65); //a
-    // camera.keysRight.push(68); //d
-
-
-    var camera = new BABYLON.UniversalCamera("camera", new BABYLON.Vector3(0, 1, -10), scene);
+    var camera = new BABYLON.ArcRotateCamera("camera1", -4, 1, -10, new BABYLON.Vector3(0, 0, 0), scene);
+    camera.setPosition(new BABYLON.Vector3(-4, 1, -10));
     camera.attachControl(canvas, true);
 
-    camera.keysUp.push(87);
-    camera.keysDown.push(83);
-    camera.keysLeft.push(65);
-    camera.keysRight.push(68);
-    camera.zoomSpeed = 0.5;
+    camera.keysUp.push(87); //w
+    camera.keysDown.push(83); //s
+    camera.keysLeft.push(65); //a
+    camera.keysRight.push(68); //d
+
+
+    // var camera = new BABYLON.UniversalCamera("camera", new BABYLON.Vector3(0, 1, -10), scene);
+    // camera.attachControl(canvas, true);
+
+    // camera.keysUp.push(87);
+    // camera.keysDown.push(83);
+    // camera.keysLeft.push(65);
+    // camera.keysRight.push(68);
+    // camera.zoomSpeed = 0.5;
 
 
     var leafMaterial = new BABYLON.StandardMaterial("leafMaterial", scene);
@@ -408,19 +408,94 @@ var createScene = function () {
 
     const ground = Ground();
 
-    var building = house(-2, -1);
-    var building = house(1, 1.2);
-    var building = house(-1, 1.2);
-    var building = house(0, 1.2);
-    var building = house(2, -2);
-    var building = house(2.3, -0.2);
-    var building = house(-4, -5);
-    var building = house(-5, -5);
-    var building = house(4.5, -0.5);
-    var building = house(6, -5);
-    var building = house(-2, -3);
-    var building = house(-4, 3);
-    var building = house(-6, 3);
+    var building = house(-2, -1, 0);
+    var building = house(1, 1.2, 0);
+    var building = house(-1, 1.2, 0);
+    var building = house(0, 1.2, 0);
+    var building = house(2, -2, 0);
+    var building = house(2.3, -0.2, 0);
+    var building = house(-4, -5, 0);
+    var building = house(-5, -5, 0);
+    var building = house(4.5, -0.5, 0);
+    var building = house(6, -5, 0);
+    var building = house(-2, -3, 0);
+    var building = house(-4, 3, 0);
+    var building = house(-6, 3, 0);
+
+    var building = house(-2, -1, 1);
+    var building = house(1, 1.2, 1);
+    var building = house(-1, 1.2, 1);
+    var building = house(0, 1.2, 1);
+    var building = house(2, -2, 1);
+    var building = house(2.3, -0.2, 1);
+    var building = house(-4, -5, 1);
+    var building = house(-5, -5, 1);
+    var building = house(4.5, -0.5, 1);
+    var building = house(6, -5, 1);
+    var building = house(-2, -3, 1);
+    var building = house(-4, 3, 1);
+    var building = house(-6, 3, 1);
+
+
+    var building = house(-2, -1, 2);
+    var building = house(1, 1.2, 2);
+    var building = house(-1, 1.2, 2);
+    var building = house(0, 1.2, 2);
+    var building = house(2, -2, 2);
+    var building = house(2.3, -0.2, 2);
+    var building = house(-4, -5, 2);
+    var building = house(-5, -5, 2);
+    var building = house(4.5, -0.5, 2);
+    var building = house(6, -5, 2);
+    var building = house(-2, -3, 2);
+    var building = house(-4, 3, 2);
+    var building = house(-6, 3, 2);
+
+
+    var building = house(-2, -1, 3);
+    var building = house(1, 1.2, 3);
+    var building = house(-1, 1.2, 3);
+    var building = house(0, 1.2, 3);
+    var building = house(2, -2, 3);
+    var building = house(2.3, -0.2, 3);
+    var building = house(-4, -5, 3);
+    var building = house(-5, -5, 3);
+    var building = house(4.5, -0.5, 3);
+    var building = house(6, -5, 3);
+    var building = house(-2, -3, 3);
+    var building = house(-4, 3, 3);
+    var building = house(-6, 3, 3);
+
+    var building = house(-2, -1, 4);
+    var building = house(1, 1.2, 4);
+    var building = house(-1, 1.2, 4);
+    var building = house(0, 1.2, 4);
+    var building = house(2, -2, 4);
+    var building = house(2.3, -0.2, 4);
+    var building = house(-4, -5, 4);
+    var building = house(-5, -5, 4);
+    var building = house(4.5, -0.5, 4);
+    var building = house(6, -5, 4);
+    var building = house(-2, -3, 4);
+    var building = house(-4, 3, 4);
+    var building = house(-6, 3, 4);
+
+    var building = house(-2, -1, 5);
+    var building = house(1, 1.2, 5);
+    var building = house(-1, 1.2, 5);
+    var building = house(0, 1.2, 5);
+    // var building = house(2, -2, 4);
+    // var building = house(2.3, -0.2, 4);
+    // var building = house(-4, -5, 4);
+    // var building = house(-5, -5, 4);
+    // var building = house(4.5, -0.5, 4);
+    // var building = house(6, -5, 4);
+    // var building = house(-2, -3, 4);
+    // var building = house(-4, 3, 4);
+    // var building = house(-6, 3, 4);
+
+
+
 
     var car = BABYLON.SceneLoader.ImportMesh("", "https://assets.babylonjs.com/meshes/", "car.babylon", scene, function (meshes) {
 
@@ -460,16 +535,24 @@ const Ground = () => {
     ground.position.y = -0.15;
 }
 
-var house = function (X, Z) {
+var house = function (X, Z, Y) {
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-    const box = buildBox(X, Z);
-    const roof = buildRoof(X, Z);
+    const box = buildBox(X, Z, Y);
+    // const roof = buildRoof(X, Z);
 
-    const house = BABYLON.Mesh.MergeMeshes([box, roof], true, false, null, false, true);
+    const house = BABYLON.Mesh.MergeMeshes([box], true, false, null, false, true);
 }
+// var house = function (X, Z) {
+//     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-const buildBox = (X, Z) => {
+//     const box = buildBox(X, Z);
+//     const roof = buildRoof(X, Z);
+
+//     const house = BABYLON.Mesh.MergeMeshes([box, roof], true, false, null, false, true);
+// }
+
+const buildBox = (X, Z, Y) => {
     const boxMat = new BABYLON.StandardMaterial("roofMat");
     boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png")
 
@@ -481,12 +564,30 @@ const buildBox = (X, Z) => {
 
     const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
     box.material = boxMat;
-    box.position.y = 0.35;
+    box.position.y = 0.35 + Y;
     box.position.x = X;
     box.position.z = Z;
 
     return box;
 }
+// const buildBox = (X, Z) => {
+//     const boxMat = new BABYLON.StandardMaterial("roofMat");
+//     boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png")
+
+//     const faceUV = [];
+//     faceUV[1] = new BABYLON.Vector4(0.5, 0.0, 0.75, 1);
+//     faceUV[2] = new BABYLON.Vector4(0.0, 0.0, 0.25, 1);
+//     faceUV[3] = new BABYLON.Vector4(0.25, 0, 0.5, 1);
+//     faceUV[4] = new BABYLON.Vector4(0.75, 0.0, 1.0, 1.0);
+
+//     const box = BABYLON.MeshBuilder.CreateBox("box", { faceUV: faceUV, wrap: true });
+//     box.material = boxMat;
+//     box.position.y = 0.35;
+//     box.position.x = X;
+//     box.position.z = Z;
+
+//     return box;
+// }
 
 const buildRoof = (X, Z) => {
 
