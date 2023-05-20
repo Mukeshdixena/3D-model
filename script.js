@@ -15,6 +15,7 @@ var createDefaultEngine = function () { return new BABYLON.Engine(canvas, true, 
 var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color3(0.29, 0.26, 0.26);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
     var camera = new BABYLON.ArcRotateCamera("camera1", -4, 1, -10, new BABYLON.Vector3(0, 0, 0), scene);
     camera.setPosition(new BABYLON.Vector3(5, 20, -15));
@@ -408,7 +409,14 @@ var createScene = function () {
 
     const ground = Ground();
 
-    var building = house(-2, -1, 0);
+
+
+
+    // var building = house(2, 1, 0);
+    
+    // var building = house(2, 2, 0);
+    
+
     var building = house(1, 1.2, 0);
     var building = house(-1, 1.2, 0);
     var building = house(0, 1.2, 0);
@@ -419,8 +427,8 @@ var createScene = function () {
     var building = house(4.5, -0.5, 0);
     var building = house(6, -5, 0);
     var building = house(-2, -3, 0);
-    var building = house(-4, 3, 0);
-    var building = house(-6, 3, 0);
+    // var building = house(-4, 3, 0);
+    // var building = house(-6, 3, 0);
 
     var building = house(-2, -1, 1);
     var building = house(1, 1.2, 1);
@@ -433,8 +441,8 @@ var createScene = function () {
     var building = house(4.5, -0.5, 1);
     var building = house(6, -5, 1);
     var building = house(-2, -3, 1);
-    var building = house(-4, 3, 1);
-    var building = house(-6, 3, 1);
+    // var building = house(-4, 3, 1);
+    // var building = house(-6, 3, 1);
 
 
     var building = house(-2, -1, 2);
@@ -448,8 +456,8 @@ var createScene = function () {
     var building = house(4.5, -0.5, 2);
     var building = house(6, -5, 2);
     var building = house(-2, -3, 2);
-    var building = house(-4, 3, 2);
-    var building = house(-6, 3, 2);
+    // var building = house(-4, 3, 2);
+    // var building = house(-6, 3, 2);
 
 
     var building = house(-2, -1, 3);
@@ -463,8 +471,8 @@ var createScene = function () {
     var building = house(4.5, -0.5, 3);
     var building = house(6, -5, 3);
     var building = house(-2, -3, 3);
-    var building = house(-4, 3, 3);
-    var building = house(-6, 3, 3);
+    // var building = house(-4, 3, 3);
+    // var building = house(-6, 3, 3);
 
     var building = house(-2, -1, 4);
     var building = house(1, 1.2, 4);
@@ -477,19 +485,19 @@ var createScene = function () {
     var building = house(4.5, -0.5, 4);
     var building = house(6, -5, 4);
     var building = house(-2, -3, 4);
-    var building = house(-4, 3, 4);
-    var building = house(-6, 3, 4);
+    // var building = house(-4, 3, 4);
+    // var building = house(-6, 3, 4);
 
     var building = house(-2, -1, 5);
     var building = house(1, 1.2, 5);
     var building = house(-1, 1.2, 5);
     var building = house(0, 1.2, 5);
-    // var building = house(2, -2, 4);
-    // var building = house(2.3, -0.2, 4);
-    // var building = house(-4, -5, 4);
-    // var building = house(-5, -5, 4);
-    // var building = house(4.5, -0.5, 4);
-    // var building = house(6, -5, 4);
+    var building = house(2, -2, 4);
+    var building = house(2.3, -0.2, 4);
+    var building = house(-4, -5, 4);
+    var building = house(-5, -5, 4);
+    var building = house(4.5, -0.5, 4);
+    var building = house(6, -5, 4);
     // var building = house(-2, -3, 4);
     // var building = house(-4, 3, 4);
     // var building = house(-6, 3, 4);
@@ -536,7 +544,6 @@ const Ground = () => {
 }
 
 var house = function (X, Z, Y) {
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
     const box = buildBox(X, Z, Y);
     // const roof = buildRoof(X, Z);
